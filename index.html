@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="">
+    <title>index</title>
+  </head>
+  <body>
+    <!-- We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>. -->
+   
+    <script src="./static/js/jquery.min.js"> </script>
+    <script>
+      $(document).ready(function(){
+        $.ajax({
+          timeout: 200,
+          type: 'GET',
+          url: 'http://localhost',
+          data: {
+          },
+          success: function(obj){
+            window.location.href = "http://localhost"
+          },
+          error: function(obj){
+            window.location.href = "loading.html";
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
