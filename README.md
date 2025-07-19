@@ -1,22 +1,51 @@
-# minimal-repro
+# Electron Jar to Windows Exe
 
-**Quickly create and share examples of Electron app behaviors or bugs.**
+**基于Electron, 实现jar打包成Windows EXE程序.**
+
+## 介绍
 
 > [!NOTE]
-> This repro was renamed from `electron-quick-start` to clarify its purpose as a repro template. If you're looking to boostrap a new Electron app, check out the [Electron Forge](https://www.electronforge.io/) docs instead to get started!
+> 需要将数据库文件database/csfw.db 拷贝到D:\database\ruoyi
 
-Creating a minimal reproduction (or "minimal repro") is essential when troubleshooting Electron apps. By stripping away everything except the code needed to demonstrate a specific behavior or bug, it becomes easier for others to understand, debug, and fix issues. This focused approach saves time and ensures that everyone involved is looking at exactly the same problem without distractions.
+Web框架：ruoyi
+数据库：sqlite3
 
-A basic Electron application contains:
+## 编译及命令：
 
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
-- `preload.js` - A content script that runs before the renderer process loads.
+```bash
+npm install electron --save-dev
 
-You can learn more about each of these components in depth within the [Tutorial](https://electronjs.org/docs/latest/tutorial/tutorial-prerequisites).
+npm install electron-builder --save-dev
 
-## To Use
+# 部署生成可执行程序EXE
+npm run dist
+
+```
+
+## 运行效果
+
+### 登录界面
+
+![login.png](https://github.com/pengrui2009/ElectronDemo/blob/main/images/login.png)
+
+### 用户管理界面
+
+![login.png](https://github.com/pengrui2009/ElectronDemo/blob/main/images/user_mgr.png)
+
+### 界面全屏
+
+![login.png](https://github.com/pengrui2009/ElectronDemo/blob/main/images/fullscreen.png)
+
+### 锁屏界面
+
+![login.png](https://github.com/pengrui2009/ElectronDemo/blob/main/images/lock_screen.png)
+
+### 文档查看界面
+
+![login.png](https://github.com/pengrui2009/ElectronDemo/blob/main/images/document.png)
+
+
+## 使用指南
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
