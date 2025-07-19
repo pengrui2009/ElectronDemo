@@ -31,7 +31,8 @@ contextBridge.exposeInMainWorld('myAPI', {
   },
   startServerForbat: () =>{
     console.log('startServerForbat')
-    const bat = spawn(path.join(__dirname, 'my.bat'));
+    let path1 = path.join(__dirname, 'app/ruoyi-admin.bat');
+    const bat = spawn('cmd.exe',['/c', path1]);
     bat.stdout.on('data', (data) => {
       console.log(data.toString());
       if(data.toString().indexOf("Started RuoYiApplication") !== -1){
